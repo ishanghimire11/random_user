@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const RightContainerHeading = (props) => {
   const { user, handleRefresh } = props;
@@ -12,7 +13,7 @@ const RightContainerHeading = (props) => {
 
       <div>
         <button onClick={handleRefresh} id="refresh-button">
-          + Get new user
+          <FontAwesomeIcon icon={faPlus} /> Get new user
         </button>
       </div>
     </>
