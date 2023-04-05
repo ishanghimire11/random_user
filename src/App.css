@@ -1,0 +1,142 @@
+.light-mode {
+  --primary-color: black;
+  --primary-background:whitesmoke;
+  --primary-body:white;
+  --primary-border: rgb(223, 223, 223);
+  
+}
+
+.dark-mode {
+  --primary-color: white;
+  --primary-background: #1E2021;
+  --primary-body:#181A1B;
+  --primary-border: #282b2c;
+}
+
+body {
+  background-color: var(--primary-body);
+  color: var(--primary-color);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.userdata-container {
+  display: flex;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: var(--primary-background);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  text-align: left;
+}
+
+.left-container {
+  position: relative;
+  flex-basis: 25%;
+  margin-right: 3rem;
+}
+
+#user-picture {
+  width: 60%;
+  border-radius: 50%;
+}
+
+.login-container {
+  margin: 3rem 0;
+  text-align: left;
+}
+
+.contact-container {
+  text-align: left;
+}
+
+#theme-button {
+  margin-top: 2.5rem;
+  padding: 0.8rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 0.4rem;
+  background-color: inherit;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+#theme-button:hover {
+  cursor: pointer;
+  border-color: #376bd3;
+  color: #376bd3;
+}
+
+.theme-icon {
+  margin-right: 0.5rem;
+}
+
+.api-details {
+  position: absolute;
+  bottom: 1rem;
+}
+
+.randomuser-url {
+  margin-left: 0.2rem;
+  text-decoration: none;
+  color: #3665c2;
+  font-weight: 500;
+}
+
+.randomuser-url:hover {
+  text-decoration: underline #3665c2 2px;
+}
+
+.right-container {
+  flex-basis: 70%;
+}
+
+.right-container-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-fullname {
+  margin: 0;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+#refresh-button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: #376bd3;
+  font-size: 1rem;
+  color: white;
+}
+
+#refresh-button:hover {
+  cursor: pointer;
+  background-color: #3665c2;
+}
+
+.userdata {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--primary-border);
+}
+
+.label-data {
+  font-weight: 500;
+}
+
+.user-gender {
+  text-transform: capitalize;
+}
+
+.address-container {
+  margin-top: 3rem;
+}
