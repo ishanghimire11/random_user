@@ -26,6 +26,10 @@ body {
   font-size: 1rem;
 }
 
+#loading-image {
+  user-select: none;
+}
+
 .userdata-container {
   display: flex;
   width: 90%;
