@@ -9,9 +9,11 @@ const FetchUser = () => {
   const [userDetails, setuserDetails] = useState([]);
   const [refresh, setRefresh] = useState(true);
   const [isLoading, setLoading] = useState(true);
+  const [buttonDisable, setbuttonDisable] = useState(false)
 
   const handleRefresh = () => {
     setRefresh(false);
+    setbuttonDisable(true)
   };
 
   useEffect(() => {
@@ -22,11 +24,14 @@ const FetchUser = () => {
         const res = await fetch(BASE_URL, { signal: abortController.signal });
         const data = await res.json();
         setuserDetails(data);
-        setLoading(false);  
+        setLoading(false); 
+        setbuttonDisable(false);
+        console.log(data);
       } 
       catch (error) {
         console.error(error);
         setLoading(true);
+        setbuttonDisable(true)
       }
     }
 
@@ -45,7 +50,7 @@ const FetchUser = () => {
       {isLoading ? (
         <img src={loadingImage} alt="loading...." id="loading-image" />
       ) : (
-        <UserMap userDetails={userDetails} handleRefresh={handleRefresh} />
+        <UserMap userDetails={userDetails} handleRefresh={handleRefresh} buttonDisable={buttonDisable} />
       )}
     </>
   );

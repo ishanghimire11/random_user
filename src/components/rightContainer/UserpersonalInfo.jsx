@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 const UserPersonalInfo = (props) => {
   const { user } = props;
   const {gender, name: { title, first, last }, dob: { age, date }, registered, nat } = user;
@@ -47,5 +49,28 @@ const UserPersonalInfo = (props) => {
     </>
   );
 };
+
+UserPersonalInfo.defaultProps = {
+  gender: "Male",
+  title: "Mr",
+  first: "Ishan",
+  last: "Ghimire",
+  age: 22,
+  date: "2111-01-01T05:51:59.390Z",
+  registered:"2007-07-09T05:51:59.390Z",
+  nat:"NP",
+}
+
+UserPersonalInfo.propTypes = {
+  user: PropTypes.object,
+  gender: PropTypes.string,
+  title: PropTypes.string,
+  first: PropTypes.string,
+  last:PropTypes.string,
+  age:PropTypes.number,
+  date:PropTypes.string,
+  registered:PropTypes.string,
+  nat:PropTypes.string,
+}
 
 export default UserPersonalInfo;

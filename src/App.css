@@ -123,6 +123,10 @@ body {
   background-color: #3665c2;
 }
 
+#refresh-button:disabled {
+  background-color: gray;
+}
+
 .userdata {
   display: flex;
   justify-content: space-between;

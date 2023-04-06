@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 const UserContact = (props) => {
   const { user } = props;
   const {phone, email, cell} = user
@@ -11,5 +13,13 @@ const UserContact = (props) => {
     </>
   );
 };
+
+UserContact.propTypes = {
+  user: PropTypes.object,
+  phone: PropTypes.string,
+  email: PropTypes.string,
+  cell: PropTypes.string
+}
+
 
 export default UserContact;

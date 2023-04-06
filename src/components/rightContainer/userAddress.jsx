@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 const UserAddress = (props) => {
     const { user } = props
     const {
@@ -35,5 +37,24 @@ const UserAddress = (props) => {
     </>
   );
 };
+
+UserAddress.defaultProps = {
+  city: "Kathmandu",
+  state: "Bagmati",
+  country: "Nepal",
+  postcode:"44600",
+  number: 9,
+  name: "Kageshwori manahara"
+}
+
+UserAddress.propTypes = {
+  user: PropTypes.object,
+  city: PropTypes.string,
+  state: PropTypes.string,
+  country: PropTypes.string,
+  postcode: PropTypes.string,
+  number: PropTypes.number,
+  name: PropTypes.string
+}
 
 export default UserAddress;

@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import PlaceholderPhoto from "../../assets/placeholderImage.jpg"
 import UserContact from "./userContact";
 import UserLogin from "./userLogin";
 
 const LeftContainer = (props) => {
   const { user } = props;
-  const {
-    picture: { large },
-  } = user;
+  const {picture: { large } } = user;
 
-  console.log(localStorage.getItem('darkMode') === 'true')
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem('darkMode') === 'true'
   );
@@ -44,7 +43,7 @@ const LeftContainer = (props) => {
       </div>
 
       <div className="light-mode-container">
-        <button onClick={handleColorMode} id="theme-button">
+        <button onClick={handleColorMode} id="theme-button" type="button">
           {darkMode ? (
             <FontAwesomeIcon icon={faSun} className="theme-icon" />
           ) : (
@@ -66,5 +65,14 @@ const LeftContainer = (props) => {
     </>
   );
 };
+
+LeftContainer.defaultProps = {
+  large: "https://www.cmete.com/skins/theme_cmete_2016/images/placeholders/testimonial-placeholder.jpg"
+}
+
+LeftContainer.propTypes = {
+  user: PropTypes.object,
+  large: PropTypes.string
+}
 
 export default LeftContainer;

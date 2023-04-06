@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 const UserLogin = (props) => {
     const { user } = props
     const {login: {username, password}} = user
@@ -9,5 +11,17 @@ const UserLogin = (props) => {
     </>
   );
 };
+
+UserLogin.defaultProps = {
+  username: "HolyGrail",
+  password: "12345678"
+}
+
+UserLogin.propTypes = {
+  user: PropTypes.object,
+  username: PropTypes.string,
+  password: PropTypes.string
+}
+
 
 export default UserLogin;

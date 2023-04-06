@@ -1,8 +1,9 @@
+import PropTypes from "prop-types"
 import LeftContainer from "../leftContainer/leftContainer";
 import RightContainer from "../rightContainer/rightContainer";
 
 const UserMap = (props) => {
-  const { userDetails, handleRefresh } = props;
+  const { userDetails, handleRefresh, buttonDisable } = props;
   const userDescriptions = userDetails.results;
 
   return (
@@ -18,7 +19,7 @@ const UserMap = (props) => {
               </div>
 
               <div className="right-container">
-                <RightContainer user={user} handleRefresh={handleRefresh} />
+                <RightContainer user={user} handleRefresh={handleRefresh} buttonDisable={buttonDisable} />
               </div>
             </div>
           );
@@ -26,5 +27,16 @@ const UserMap = (props) => {
     </>
   );
 };
+
+UserMap.defaultProps =  {
+  handleRefresh: null,
+  buttonDisable: false
+}
+
+UserMap.propTypes = {
+  userDetails : PropTypes.object,
+  handleRefresh: PropTypes.func, 
+  buttonDisable:PropTypes.bool
+}
 
 export default UserMap;
